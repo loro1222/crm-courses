@@ -11,7 +11,6 @@ import java.time.LocalTime;
 
 import static com.demo.crm.model.enums.CourseFormats.ONLINE;
 
-
 public class Main {
     public static void main(String[] args) {
 
