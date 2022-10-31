@@ -33,10 +33,10 @@ public class Course extends BaseModel {
     @Override
     public String toString() {
         return "Course{" +
-                "courseName='" + courseName + '\'' +
-                ", courseType=" + courseType +
-                ", id=" + getId() +
-                ", createDate=" + getCreateDate() +
+                " id = " + getId() +
+                ", courseName = '" + courseName + '\'' +
+                ", courseType = " + courseType +
+                ", createDate = " + getCreateDate() +
                 '}';
     }
 }
