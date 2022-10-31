@@ -15,13 +15,13 @@ public final class Student extends Person {
     @Override
     public String toString() {
         return "Student{" +
-                "firstName='" + getFirstName() + '\'' +
-                ", lastName='" + getLastName() + '\'' +
-                ", email='" + getEmail() + '\'' +
-                ", phoneNumber='" + getPhoneNumber() + '\'' +
-                ", dob=" + getDob() +
-                ", id=" + getId() +
-                ", createDate=" + getCreateDate() +
+                " id = " + getId() +
+                ", firstName = '" + getFirstName() + '\'' +
+                ", lastName = '" + getLastName() + '\'' +
+                ", email = '" + getEmail() + '\'' +
+                ", phoneNumber = '" + getPhoneNumber() + '\'' +
+                ", dob = " + getDob() +
+                ", createDate = " + getCreateDate() +
                 '}';
     }
 }

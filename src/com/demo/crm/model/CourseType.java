@@ -14,8 +14,6 @@ public class CourseType extends BaseModel {
     private Boolean isOffline;
     private CourseFormats format;
 
-    public CourseType() {
-    }
 
     public CourseType(Long id, String typeName, Integer durationOfCourse, LocalTime durationOfLesson, Integer lessonsPerWeek, Double pricePerMonth, Boolean isOffline, CourseFormats format) {
         super(id);
@@ -87,16 +85,16 @@ public class CourseType extends BaseModel {
     @Override
     public String toString() {
         return "CourseType{" +
-                "typeName='" + typeName + '\'' +
-                ", durationOfCourse=" + durationOfCourse +
-                ", durationOfLesson=" + durationOfLesson +
-                ", lessonsPerWeek=" + lessonsPerWeek +
-                ", pricePerMonth=" + pricePerMonth +
-                ", isOffline=" + isOffline +
-                ", format=" + format +
-                ", offline=" + getOffline() +
-                ", id=" + getId() +
-                ", createDate=" + getCreateDate() +
+                " id = " + getId() +
+                ", typeName = '" + typeName + '\'' +
+                ", durationOfCourse = " + durationOfCourse +
+                ", durationOfLesson = " + durationOfLesson +
+                ", lessonsPerWeek = " + lessonsPerWeek +
+                ", pricePerMonth = " + pricePerMonth +
+                ", isOffline = " + isOffline +
+                ", format = " + format +
+                ", offline = " + getOffline() +
+                ", createDate = " + getCreateDate() +
                 '}';
     }
 }
