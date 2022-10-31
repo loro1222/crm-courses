@@ -26,8 +26,6 @@ public class Main {
                 .durationOfLesson(LocalTime.now()).lessonsPerWeek(12).pricePerMonth(20000.0).isOffline(true)
                 .format(ONLINE).build();
 
-
-
         System.out.println(student);
         System.out.println(mentor);
         System.out.println(coursetype);
