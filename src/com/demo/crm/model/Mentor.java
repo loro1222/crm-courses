@@ -3,6 +3,7 @@ package com.demo.crm.model;
 import java.time.LocalDate;
 
 public class Mentor extends Person {
+    private Double salary;
 
    public Mentor() {
 
@@ -10,7 +11,11 @@ public class Mentor extends Person {
 
     public Mentor(Long id, String firstName, String lastName, String email, String phoneNumber, LocalDate dob, Double salary) {
         super(id, firstName, lastName, email, phoneNumber, dob);
+        this.salary = salary;
+    }
 
+    public Double getSalary() {
+       return salary;
     }
 
     @Override
@@ -23,6 +28,7 @@ public class Mentor extends Person {
                 ", phoneNumber = '" + getPhoneNumber() + '\'' +
                 ", dob = " + getDob() +
                 ", createDate = " + getCreateDate() +
+                ", salary = " + getSalary() +
                 '}';
     }
 }

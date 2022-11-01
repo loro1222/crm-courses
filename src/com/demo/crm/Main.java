@@ -11,6 +11,7 @@ public class Main {
         StudentService studentService1 = new StudentService();
         Student student1 = studentService1.create();
 
+
         System.out.println(student);
         System.out.println(student1);
     }
