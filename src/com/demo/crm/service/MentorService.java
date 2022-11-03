@@ -42,7 +42,7 @@ public class MentorService {
         LocalDate dob = LocalDate.parse(dobInString, formatter);
 
         System.out.print("Salary: ");
-        Double salary = scanner.nextDouble();
+        Double salary = Double.parseDouble(scanner.nextLine());
 
         return MentorBuilder
                 .builder()

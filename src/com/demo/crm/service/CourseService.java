@@ -23,13 +23,20 @@ public class CourseService {
     public Course create() {
         System.out.println("Creating course... ");
 
-        System.out.print("Please, enter course data below.");
+        System.out.println("Please, enter course data below");
+        System.out.print("Course name: ");
         String courseName = scanner.nextLine();
 
         System.out.print("Course type: ");
-        CourseType courseType;
+        CourseTypeService courseTypeService = new CourseTypeService();
+        CourseType courseType = courseTypeService.create();
 
-        return null;
+
+        return CourseBuilder.builder()
+                .id(++idCounter)
+                .courseName(courseName)
+                .courseType(courseType)
+                .build();
     }
 
 }

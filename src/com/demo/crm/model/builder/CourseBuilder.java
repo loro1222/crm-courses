@@ -31,6 +31,13 @@ public class CourseBuilder {
 		return new Course(id, courseName, courseType);
 	}
 
-
+	@Override
+	public String toString() {
+		return "CourseBuilder{" +
+				"id=" + id +
+				", courseName='" + courseName + '\'' +
+				", courseType=" + courseType +
+				'}';
+	}
 }
 
