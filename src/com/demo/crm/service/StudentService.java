@@ -1,5 +1,7 @@
 package com.demo.crm.service;
 
+import com.demo.crm.dao.StudentDao;
+import com.demo.crm.dao.impl.StudentDaoImplFile;
 import com.demo.crm.model.Student;
 import com.demo.crm.model.builder.StudentBuilder;
 
@@ -11,6 +13,7 @@ public class StudentService {
 
     private Scanner scanner;
     private static Long idCounter;
+    private StudentDao studentDao;
 
     static {
         System.out.println("Static block initialized");
@@ -20,6 +23,7 @@ public class StudentService {
     public StudentService() {
         System.out.println("Student service constructor invoked");
         this.scanner = new Scanner(System.in);
+        this.studentDao = new StudentDaoImplFile();
     }
 
     public Student create() {
@@ -44,12 +48,15 @@ public class StudentService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDate dob = LocalDate.parse(dobInString, formatter);
 
-        return StudentBuilder.builder().id(++idCounter)
+        return studentDao.save(StudentBuilder.builder().id(++idCounter)
                 .firstName(firstName)
                 .lastName(lastName)
                 .email(email)
                 .phoneNumber(phoneNumber)
-                .dob(dob).build();
+                .dob(dob).build());
     }
 
+    public Student find(Long id) {
+        return studentDao.find(id);
+    }
 }

@@ -11,6 +11,7 @@ public class CourseService {
     private Scanner scanner;
 
     private static Long idCounter;
+    private CourseTypeService courseTypeService;
 
     static {
         idCounter = 0L;
@@ -18,6 +19,7 @@ public class CourseService {
 
     public CourseService() {
         this.scanner = new Scanner(System.in);
+        courseTypeService = new CourseTypeService();
     }
 
     public Course create() {
@@ -28,9 +30,7 @@ public class CourseService {
         String courseName = scanner.nextLine();
 
         System.out.print("Course type: ");
-        CourseTypeService courseTypeService = new CourseTypeService();
         CourseType courseType = courseTypeService.create();
-
 
         return CourseBuilder.builder()
                 .id(++idCounter)

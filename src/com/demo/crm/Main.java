@@ -38,7 +38,7 @@ public class Main {
                 .append("Enter 3 to create Student\n")
                 .append("Enter 4 to print list of Course\n")
                 .append("Enter 5 to print list of Mentors\n")
-                .append("Enter 6 to print list of Students\n")
+                .append("Enter 6 to get student by id\n")
                 .append("Enter 0 o EXIT").toString());
         System.out.println("Please, enter number between 1 and 6 of 0 to exit");
 
@@ -55,7 +55,7 @@ public class Main {
         } else if (value == 5) {
             printMentorsList();
         } else if (value == 6) {
-            printStudentsList();
+            getStudent();
         } else if (value == 0) {
             return;
         }
@@ -92,6 +92,12 @@ public class Main {
         for (Student student : listOfStudents) {
             System.out.println(student);
         }
+    }
+
+    public static void getStudent() {
+        System.out.print("Enter student id: ");
+        long id = scanner.nextLong();
+        System.out.println(studentService.find(id));
     }
 
 }
