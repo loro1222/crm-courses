@@ -66,6 +66,7 @@ public class CourseType extends BaseModel {
         this.pricePerMonth = pricePerMonth;
     }
 
+
     public Boolean getOffline() {
         return isOffline;
     }

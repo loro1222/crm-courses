@@ -18,6 +18,10 @@ public class Mentor extends Person {
        return salary;
     }
 
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
     @Override
     public String toString() {
         return "Mentor{" +

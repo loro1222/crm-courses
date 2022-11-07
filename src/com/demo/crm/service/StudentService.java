@@ -16,12 +16,10 @@ public class StudentService {
     private StudentDao studentDao;
 
     static {
-        System.out.println("Static block initialized");
         idCounter = 0L;
     }
 
     public StudentService() {
-        System.out.println("Student service constructor invoked");
         this.scanner = new Scanner(System.in);
         this.studentDao = new StudentDaoImplFile();
     }
