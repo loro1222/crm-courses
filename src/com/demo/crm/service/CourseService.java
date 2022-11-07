@@ -1,5 +1,6 @@
 package com.demo.crm.service;
 
+import com.demo.crm.dao.CourseDao;
 import com.demo.crm.model.Course;
 import com.demo.crm.model.CourseType;
 import com.demo.crm.model.builder.CourseBuilder;
@@ -12,6 +13,7 @@ public class CourseService {
 
     private static Long idCounter;
     private CourseTypeService courseTypeService;
+    private CourseDao courseDao;
 
     static {
         idCounter = 0L;
@@ -32,11 +34,11 @@ public class CourseService {
         System.out.print("Course type: ");
         CourseType courseType = courseTypeService.create();
 
-        return CourseBuilder.builder()
+        return courseDao.save(CourseBuilder.builder()
                 .id(++idCounter)
                 .courseName(courseName)
                 .courseType(courseType)
-                .build();
+                .build());
     }
 
 }

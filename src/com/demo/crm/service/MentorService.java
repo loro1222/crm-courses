@@ -1,5 +1,7 @@
 package com.demo.crm.service;
 
+import com.demo.crm.dao.MentorDao;
+import com.demo.crm.dao.impl.MentorDaoImplFile;
 import com.demo.crm.model.Mentor;
 import com.demo.crm.model.builder.MentorBuilder;
 
@@ -11,6 +13,7 @@ public class MentorService {
 
     private Scanner scanner;
     private static Long idCounter;
+    private MentorDao mentorDao;
 
     static {
         idCounter = 0L;
@@ -18,6 +21,7 @@ public class MentorService {
 
     public MentorService() {
         this.scanner = new Scanner(System.in);
+        this.mentorDao = new MentorDaoImplFile();
     }
 
     public Mentor create() {
@@ -45,7 +49,7 @@ public class MentorService {
         System.out.print("Salary: ");
         Double salary = Double.parseDouble(scanner.nextLine());
 
-        return MentorBuilder
+        return mentorDao.save(MentorBuilder
                 .builder()
                 .id(++idCounter)
                 .firstName(firstName)
@@ -54,6 +58,6 @@ public class MentorService {
                 .phoneNumber(phoneNumber)
                 .dob(dob)
                 .salary(salary)
-                .build();
+                .build());
     }
 }

@@ -1,5 +1,6 @@
 package com.demo.crm.service;
 
+import com.demo.crm.dao.CourseTypeDao;
 import com.demo.crm.model.CourseType;
 import com.demo.crm.model.builder.CourseTypeBuilder;
 import com.demo.crm.model.enums.CourseFormats;
@@ -11,6 +12,7 @@ import java.util.Scanner;
 public class CourseTypeService {
     private Scanner scanner;
     private static Long idCounter;
+    private CourseTypeDao courseTypeDao;
 
     static {
         idCounter = 0L;
@@ -60,7 +62,7 @@ public class CourseTypeService {
        System.out.print("Course format: ");
        CourseFormats format = CourseFormats.valueOf(scanner.nextLine().trim().toUpperCase());
 
-       return CourseTypeBuilder.builder()
+       return courseTypeDao.save(CourseTypeBuilder.builder()
                .id(++idCounter)
                .typeName(typeName)
                .durationOfCourse(durationOfCourse)
@@ -68,7 +70,7 @@ public class CourseTypeService {
                .lessonsPerWeek(lessonsPerWeek)
                .pricePerMonth(pricePerMonth)
                .isOffline(isOffLine)
-               .format(format).build();
+               .format(format).build());
 
    }
 }
