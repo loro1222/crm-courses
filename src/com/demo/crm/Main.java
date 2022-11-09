@@ -3,8 +3,6 @@ package com.demo.crm;
 import com.demo.crm.model.Course;
 import com.demo.crm.model.Mentor;
 import com.demo.crm.model.Student;
-import com.demo.crm.service.CourseService;
-import com.demo.crm.service.MentorService;
 import com.demo.crm.service.StudentService;
 
 import java.util.ArrayList;
